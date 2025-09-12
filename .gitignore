@@ -1,0 +1,29 @@
+# Clojure build artifacts
+/target/
+/classes/
+/checkouts/
+/.cpcache/
+/.lsp/
+
+# Leiningen (if used)
+/.nrepl-port
+/.lein-failures
+
+# IntelliJ / Cursive
+.idea/
+/*.iml
+/out/
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs / temp
+*.log
+*.swp
+*.swo
