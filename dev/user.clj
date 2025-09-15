@@ -1,6 +1,9 @@
 (ns user
     (:require [locadora.core :as core]
-      [ring.adapter.jetty :refer [run-jetty]]))
+      [ring.adapter.jetty :refer [run-jetty]]
+              [locadora.domain.actor :as actor]
+              [locadora.adapters.repo-memory :as repo]
+              [locadora.runner :as runner]))
 
 (defonce server (atom nil))
 
