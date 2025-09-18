@@ -1,13 +1,15 @@
 (ns locadora.core
-     (:require [ring.adapter.jetty :refer [run-jetty]]) (:gen-class))
+     (:require [ring.adapter.jetty :refer [run-jetty]]
+               [reitit.ring :as ring]
+               [reitit.core :as r]
+               [locadora.routes :as routes]) (:gen-class))
 
-;; handler
-(defn handler [request]
-      {:status 200
-       :headers {"Content-Type" "application/json"}
-       :body "{\"message\": \"Hello World!\"}"})
+(def app
+  (ring/ring-handler
+    routes/router
+    (ring/create-default-handler)))
 
 ;; entry point
 (defn -main [& _]
       (println "Starting server on http://localhost:3000")
-      (run-jetty handler {:port 3000 :join? true}))
+      (run-jetty #'app {:port 3000 :join? true}))

@@ -1,7 +1,8 @@
 {:paths ["src" "resources" "dev"]
  :deps {org.clojure/clojure {:mvn/version "1.12.2"}
         ring/ring-core {:mvn/version "1.14.2"}
-        ring/ring-jetty-adapter {:mvn/version "1.14.2"}}
+        ring/ring-jetty-adapter {:mvn/version "1.14.2"}
+        metosin/reitit {:mvn/version "0.9.1"}}
 
  :aliases
  {:dev {:extra-paths ["dev"]
