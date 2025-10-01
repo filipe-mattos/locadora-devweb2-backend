@@ -1,9 +1,17 @@
 (ns locadora.routes
   (:require [reitit.ring :as ring]
-            [reitit.core :as r]
             [locadora.handlers :as handlers]))
 
 (def router
   (ring/router
-    [["/hello" {:get #'handlers/hello-world}]
-     ["/actor" {:get #'handlers/read-actors}]]))
+
+     ;; Actor endpoints
+     ["/actors"
+      {:get  #'handlers/read-actors
+       :post #'handlers/create-actor}]
+     ["/actors/:id"
+      {:get #'handlers/read-actor
+       :put #'handlers/update-actor
+       :delete #'handlers/remove-actor}]
+
+       ))

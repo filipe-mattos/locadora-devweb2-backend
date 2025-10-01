@@ -9,7 +9,7 @@
 (defonce server (atom nil))
 
 (defn start []
-      (reset! server (run-jetty core/app {:port 3000 :join? false}))
+      (reset! server (run-jetty core/app {:port 3000 :join? false :daemon? false}))
       (println "Server started on http://localhost:3000"))
 
 (defn stop []
